@@ -1,18 +1,30 @@
+<script lang="ts" setup>
+import SearchForm from '@/components/SearchForm.vue';
+import DataTable from '@/components/DataTable.vue';
+</script>
+
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+  <div class="row">
+    <section class="col-2">
+      <aside>
+        <search-form/>
+      </aside>
+    </section>
+    <section class="col-10 data-table mt-3">
+      <main>
+        <data-table/>
+      </main>
+    </section>
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
-import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
+<style scoped>
+aside {
+  height: 100vh;
+  border-right: 1px solid;
+}
 
-export default defineComponent({
-  name: 'HomeView',
-  components: {
-    HelloWorld,
-  },
-});
-</script>
+.data-table {
+  height: 100vh;
+}
+</style>
